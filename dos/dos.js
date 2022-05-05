@@ -6,24 +6,32 @@ triángulo = b*h/2
 rectángulo = b*h
 círculo = π * r2 (pi * radio al cuadrado)
 */
-
 const solucion = document.getElementById("solucion");
 
-/* et triangulo = 1;
-let rectangulo = 2;
-let circulo = 3; */
+let figure = parseInt(prompt("Selecciona la figura de la que desees calcular su área:  Triángulo : 1  Rectángulo: 2  Círculo 3 "));
 
-let figure = prompt(`Selecciona la figura del área que deseas calcular: 1. triángulo 2. rectángulo  3 .círculo`);
-
-switch(figure)
-{
-    case triangulo: 
-    let base = prompt("Introduce la base del triángulo");
-    let height = prompt("Introduce la altura del triángulo");
-    
-    let areat = base*height/2;
-solucion.textContent = `El área del triángulo es:  ${areat}`
-    break;
+let area;
 
 
+if (figure === 1) {
+    let base = parseInt(prompt("¿Cuál es la base del Triángulo?"));
+    let height = parseInt(prompt("¿Cuál es la altura del Triángulo?"));
+    area = (base * height) / 2;
+    solucion.textContent = ` El área del triángulo es : ${area}`
+
+}
+else if (figure === 2) {
+    let base = parseInt(prompt("¿Cuál es la base del Rectángulo?"));
+    let height = parseInt(prompt("¿Cuál es la altura del Rectángulo?"));
+    area = base * height;
+    solucion.textContent = ` El área del rectágulo es : ${area}`
+}
+else if (figure === 3) {
+    let radio = parseInt(prompt("¿Cuál es el radio del Círculo?"));
+
+    area = Math.PI * (Math.pow(radio, 2));
+    solucion.textContent = ` El área del círculo es : ${area}`
+}
+else {
+    console.log(prompt('Error Puede que hayas introducido un número mal'));
 }
